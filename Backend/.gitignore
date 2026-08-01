@@ -1,0 +1,27 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variables and secrets
+.env
+.env.*
+
+# Log files
+*.log
+logs/
+
+# Test coverage
+coverage/
+
+# Build folders
+dist/
+build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# JetBrains IDE settings
+.idea/
