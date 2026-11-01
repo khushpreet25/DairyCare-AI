@@ -1,0 +1,505 @@
+/* =====================================================
+   DAIRYCARE AI - REMINDER PAGE
+===================================================== */
+
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f8f6;
+  color: #173b2b;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dashboard-header {
+  min-height: 110px;
+  padding: 22px 48px;
+  background: #ffffff;
+  border-bottom: 1px solid #dce8e1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 34px;
+  font-weight: 800;
+  color: #104b35;
+}
+
+.dashboard-header p {
+  margin: 6px 0 0;
+  color: #718078;
+  font-size: 15px;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.nav-button,
+.back-button,
+.animals-button,
+.logout-button,
+.refresh-button {
+  min-height: 48px;
+  padding: 0 20px;
+
+  border-radius: 12px;
+  border: 1px solid #d6e4dc;
+
+  background: #ffffff;
+  color: #145a3d;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-button:hover,
+.back-button:hover,
+.refresh-button:hover {
+  background: #f0f7f3;
+  transform: translateY(-1px);
+}
+
+.animals-button {
+  background: #19744b;
+  color: #ffffff;
+  border-color: #19744b;
+
+  box-shadow: 0 6px 16px rgba(25, 116, 75, 0.18);
+}
+
+.animals-button:hover {
+  background: #145f3d;
+  transform: translateY(-1px);
+}
+
+.logout-button {
+  background: #0d422d;
+  color: #ffffff;
+  border-color: #0d422d;
+
+  box-shadow: 0 6px 16px rgba(13, 66, 45, 0.18);
+}
+
+.logout-button:hover {
+  background: #092f20;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.dashboard-main {
+  width: min(1200px, calc(100% - 80px));
+  margin: 0 auto;
+  padding: 55px 0 80px;
+}
+
+/* =====================================================
+   PAGE TITLE
+===================================================== */
+
+.section-title {
+  margin: 0 0 10px;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  color: #104b35;
+}
+
+.dashboard-main > .section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.page-error {
+  margin: 25px 0;
+  padding: 16px 20px;
+
+  border: 1px solid #f0b8b8;
+  border-radius: 12px;
+
+  background: #fff5f5;
+  color: #a32929;
+
+  font-weight: 600;
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-message {
+  margin-top: 30px;
+  padding: 55px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #dce8e1;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(30, 70, 50, 0.06);
+}
+
+.empty-message h3 {
+  margin: 10px 0;
+  font-size: 22px;
+  color: #174b37;
+}
+
+.empty-message p {
+  color: #718078;
+}
+
+/* =====================================================
+   REMINDER GRID
+===================================================== */
+
+.reminders-grid {
+  margin-top: 32px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(360px, 1fr));
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* =====================================================
+   REMINDER CARD
+===================================================== */
+
+.reminder-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border: 1px solid #d7e5dd;
+  border-left: 5px solid #19744b;
+
+  border-radius: 16px;
+
+  padding: 26px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 8px 25px rgba(30, 70, 50, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reminder-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 32px rgba(30, 70, 50, 0.11);
+}
+
+/* =====================================================
+   REMINDER TITLE
+===================================================== */
+
+.reminder-card h3 {
+  margin: 0 0 22px;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  color: #174b37;
+
+  line-height: 1.4;
+}
+
+/* =====================================================
+   REMINDER INFORMATION
+===================================================== */
+
+.reminder-card p {
+  margin: 0;
+
+  padding: 12px 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  border-bottom: 1px solid #edf2ef;
+
+  color: #64736c;
+
+  font-size: 14px;
+}
+
+.reminder-card p:last-of-type {
+  border-bottom: none;
+}
+
+.reminder-card p strong {
+  min-width: 85px;
+
+  color: #173b2b;
+  font-weight: 700;
+}
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+.status-pending,
+.status-completed {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 6px 12px;
+
+  border-radius: 999px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background: #fff5d9;
+  color: #a36a00;
+  border: 1px solid #f0d48a;
+}
+
+.status-completed {
+  background: #e6f6ed;
+  color: #167345;
+  border: 1px solid #b9dfc8;
+}
+
+/* =====================================================
+   CARD BUTTONS
+===================================================== */
+
+.card-buttons {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 10px;
+
+  margin-top: 22px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e3ece7;
+}
+
+.card-buttons button {
+  min-height: 44px;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.card-buttons button:hover {
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   COMPLETE
+===================================================== */
+
+.complete-button {
+  grid-column: 1 / -1;
+
+  background: #e8f6ed;
+  color: #147044;
+
+  border: 1px solid #c4e4d0;
+}
+
+.complete-button:hover {
+  background: #d9f0e2;
+}
+
+/* =====================================================
+   EDIT
+===================================================== */
+
+.edit-button {
+  background: #eef7f2;
+  color: #17623f;
+
+  border: 1px solid #cfe4d8;
+}
+
+.edit-button:hover {
+  background: #e2f1e9;
+}
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+.delete-button {
+  background: #fff5f5;
+  color: #c33a3a;
+
+  border: 1px solid #efcaca;
+}
+
+.delete-button:hover {
+  background: #ffeaea;
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.dashboard-loading {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f4f8f6;
+}
+
+.loading-card {
+  padding: 40px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8e1;
+  border-radius: 18px;
+
+  box-shadow:
+    0 12px 30px rgba(30, 70, 50, 0.08);
+}
+
+.loading-icon {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.loading-card h2 {
+  color: #174b37;
+  margin-bottom: 5px;
+}
+
+.loading-card p {
+  color: #718078;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .dashboard-header {
+    padding: 20px 25px;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .header-buttons {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-main {
+    width: calc(100% - 40px);
+    padding-top: 35px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .dashboard-header h1 {
+    font-size: 27px;
+  }
+
+  .header-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-buttons button {
+    width: 100%;
+  }
+
+  .dashboard-main {
+    width: calc(100% - 28px);
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+
+  .reminders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-card {
+    padding: 20px;
+  }
+
+  .card-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .complete-button {
+    grid-column: auto;
+  }
+
+}

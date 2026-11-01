@@ -6,50 +6,42 @@ const {
 
 const validateReminder = [
 
-  // =========================
-  // Validate Animal ID
-  // =========================
+  // =====================================================
+  // ANIMAL ID
+  // =====================================================
 
   body("animalId")
     .notEmpty()
-    .withMessage(
-      "Animal ID is required"
-    )
+    .withMessage("Animal ID is required")
     .isMongoId()
-    .withMessage(
-      "Animal ID is invalid"
-    ),
+    .withMessage("Invalid Animal ID"),
 
 
-  // =========================
-  // Validate Reminder Type
-  // =========================
+  // =====================================================
+  // REMINDER TYPE
+  // =====================================================
 
   body("reminderType")
     .notEmpty()
-    .withMessage(
-      "Reminder type is required"
-    )
+    .withMessage("Reminder type is required")
     .isIn([
       "injection",
       "diet",
       "health"
     ])
     .withMessage(
-      "Reminder type must be injection, diet, or health"
+      "Reminder type must be injection, diet or health"
     ),
 
 
-  // =========================
-  // Validate Title
-  // =========================
+  // =====================================================
+  // TITLE
+  // =====================================================
 
   body("title")
     .trim()
     .notEmpty()
-    .withMessage(
-      "Reminder title is required"
-    )
+    .withMessage("Reminder title is required")
     .isLength({
       min: 2,
       max: 100
@@ -59,62 +51,48 @@ const validateReminder = [
     ),
 
 
-  // =========================
-  // Validate Due Date
-  // =========================
+  // =====================================================
+  // DUE DATE
+  // =====================================================
 
   body("dueDate")
     .notEmpty()
-    .withMessage(
-      "Due date is required"
-    )
+    .withMessage("Due date is required")
     .isISO8601()
     .withMessage(
       "Due date must be a valid date"
     ),
 
 
-  // =========================
-  // Validate Status
-  // =========================
-
-  body("status")
-    .optional()
-    .isIn([
-      "pending",
-      "completed"
-    ])
-    .withMessage(
-      "Status must be pending or completed"
-    ),
-
-
-  // =========================
-  // Send Validation Errors
-  // =========================
+  // =====================================================
+  // VALIDATION RESULT
+  // =====================================================
 
   (req, res, next) => {
 
     const errors =
       validationResult(req);
 
+
     if (!errors.isEmpty()) {
 
       return res.status(400).json({
+
         message:
           "Reminder validation failed",
 
         errors:
           errors.array()
-      });
 
+      });
     }
 
-    next();
 
+    next();
   }
 
 ];
 
 
-module.exports = validateReminder;
+module.exports =
+  validateReminder;

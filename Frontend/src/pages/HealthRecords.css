@@ -1,0 +1,572 @@
+/* =====================================================
+   DAIRYCARE AI - HEALTH RECORDS
+===================================================== */
+
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f8f6;
+  color: #173b2b;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.dashboard-header {
+  min-height: 110px;
+  padding: 22px 48px;
+
+  background: #ffffff;
+  border-bottom: 1px solid #dce8e1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 800;
+
+  color: #104b35;
+}
+
+.dashboard-header p {
+  margin: 7px 0 0;
+
+  color: #718078;
+  font-size: 15px;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.nav-button,
+.logout-button {
+  min-height: 46px;
+
+  padding: 0 20px;
+
+  border-radius: 11px;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.nav-button {
+  background: #ffffff;
+  color: #155d3f;
+
+  border: 1px solid #d2e3da;
+}
+
+.nav-button:hover {
+  background: #edf6f1;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 14px rgba(20, 80, 50, 0.08);
+}
+
+.logout-button {
+  background: #0d422d;
+  color: #ffffff;
+
+  border: 1px solid #0d422d;
+
+  box-shadow:
+    0 6px 16px rgba(13, 66, 45, 0.18);
+}
+
+.logout-button:hover {
+  background: #092f20;
+
+  transform: translateY(-1px);
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+main {
+  width: min(1200px, calc(100% - 80px));
+
+  margin: 0 auto;
+
+  padding: 48px 0 80px;
+}
+
+/* =====================================================
+   DASHBOARD ACTIONS
+===================================================== */
+
+.dashboard-actions {
+  margin-bottom: 28px;
+
+  padding: 24px 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8e1;
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  box-shadow:
+    0 7px 24px rgba(30, 70, 50, 0.05);
+}
+
+.dashboard-actions h2 {
+  margin: 0 0 6px;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  color: #174b37;
+}
+
+.dashboard-actions p {
+  margin: 0;
+
+  color: #718078;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   PAGE ERROR
+===================================================== */
+
+.page-error {
+  margin-bottom: 25px;
+
+  padding: 16px 20px;
+
+  background: #fff5f5;
+
+  border: 1px solid #efcaca;
+  border-left: 4px solid #c33a3a;
+
+  border-radius: 12px;
+
+  color: #a32929;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* =====================================================
+   SELECT ANIMAL CARD
+===================================================== */
+
+.stat-card {
+  margin-bottom: 30px;
+
+  padding: 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8e1;
+  border-radius: 16px;
+
+  box-shadow:
+    0 8px 25px rgba(30, 70, 50, 0.06);
+}
+
+.stat-card h2 {
+  margin: 0 0 8px;
+
+  font-size: 22px;
+  font-weight: 800;
+
+  color: #174b37;
+}
+
+.stat-card p {
+  margin: 0 0 20px;
+
+  color: #718078;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   SELECT
+===================================================== */
+
+.form-input {
+  width: 100%;
+
+  min-height: 50px;
+
+  padding: 0 15px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cfded6;
+
+  border-radius: 10px;
+
+  background: #fbfdfc;
+
+  color: #173b2b;
+
+  font-size: 14px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: #19744b;
+
+  box-shadow:
+    0 0 0 3px rgba(25, 116, 75, 0.10);
+}
+
+/* =====================================================
+   ADD RECORD BUTTON
+===================================================== */
+
+.dashboard-actions .nav-button {
+  background: #19744b;
+
+  color: #ffffff;
+
+  border-color: #19744b;
+
+  box-shadow:
+    0 6px 16px rgba(25, 116, 75, 0.15);
+}
+
+.dashboard-actions .nav-button:hover {
+  background: #145f3d;
+}
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.empty-message {
+  margin-top: 25px;
+
+  padding: 55px 30px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8e1;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 8px 25px rgba(30, 70, 50, 0.05);
+}
+
+.empty-message h3 {
+  margin: 0 0 10px;
+
+  font-size: 21px;
+
+  color: #174b37;
+}
+
+.empty-message p {
+  margin: 0 0 22px;
+
+  color: #718078;
+
+  font-size: 14px;
+}
+
+/* =====================================================
+   HEALTH RECORD GRID
+===================================================== */
+
+.reminders-grid {
+  margin-top: 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(380px, 1fr));
+
+  gap: 24px;
+
+  align-items: start;
+}
+
+/* =====================================================
+   HEALTH RECORD CARD
+===================================================== */
+
+.reminder-card {
+  position: relative;
+
+  padding: 26px;
+
+  background: #ffffff;
+
+  border: 1px solid #d6e5dc;
+
+  border-left: 5px solid #19744b;
+
+  border-radius: 16px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 8px 26px rgba(30, 70, 50, 0.07);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.reminder-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 14px 32px rgba(30, 70, 50, 0.11);
+}
+
+/* =====================================================
+   RECORD TITLE
+===================================================== */
+
+.reminder-card h3 {
+  margin: 0 0 20px;
+
+  font-size: 21px;
+  font-weight: 800;
+
+  color: #174b37;
+}
+
+/* =====================================================
+   RECORD DETAILS
+===================================================== */
+
+.reminder-card > p {
+  margin: 0;
+
+  padding: 11px 0;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 8px;
+
+  border-bottom: 1px solid #edf2ef;
+
+  color: #64736c;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+}
+
+.reminder-card > p:last-of-type {
+  border-bottom: none;
+}
+
+.reminder-card > p strong {
+  min-width: 135px;
+
+  color: #173b2b;
+
+  font-weight: 700;
+}
+
+/* =====================================================
+   HEALTH RECORD ACTIONS
+===================================================== */
+
+.reminder-card .header-buttons {
+  margin-top: 20px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #e3ece7;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.reminder-card .header-buttons .nav-button {
+  width: 100%;
+
+  background: #eef7f2;
+
+  color: #17623f;
+
+  border-color: #cfe4d8;
+}
+
+.reminder-card .header-buttons .nav-button:hover {
+  background: #e2f1e9;
+}
+
+.reminder-card .header-buttons .logout-button {
+  width: 100%;
+
+  background: #fff5f5;
+
+  color: #c33a3a;
+
+  border-color: #efcaca;
+
+  box-shadow: none;
+}
+
+.reminder-card .header-buttons .logout-button:hover {
+  background: #ffeaea;
+}
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.dashboard-loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #f4f8f6;
+
+  color: #174b37;
+}
+
+.dashboard-loading h2 {
+  margin-bottom: 6px;
+}
+
+.dashboard-loading p {
+  margin: 0;
+
+  color: #718078;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+  .dashboard-header {
+    padding: 20px 25px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+  .header-buttons {
+    width: 100%;
+
+    flex-wrap: wrap;
+  }
+
+  main {
+    width: calc(100% - 40px);
+
+    padding-top: 35px;
+  }
+
+  .dashboard-actions {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .dashboard-actions .nav-button {
+    width: 100%;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .dashboard-header h1 {
+    font-size: 25px;
+  }
+
+  main {
+    width: calc(100% - 28px);
+  }
+
+  .header-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-buttons button {
+    width: 100%;
+  }
+
+  .reminders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reminder-card {
+    padding: 20px;
+  }
+
+  .reminder-card > p {
+    flex-direction: column;
+
+    gap: 3px;
+  }
+
+  .reminder-card > p strong {
+    min-width: auto;
+  }
+
+  .reminder-card .header-buttons {
+    grid-template-columns: 1fr;
+  }
+
+}

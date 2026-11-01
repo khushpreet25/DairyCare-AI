@@ -22,3 +22,6 @@ Thumbs.db
 # Build output
 dist/
 build/
+# Personal backup files
+Backend.zip
+Frontend.zip

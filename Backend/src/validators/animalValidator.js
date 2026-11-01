@@ -35,7 +35,20 @@ const validateAnimal = [
     })
     .withMessage(
       "Animal name must be between 2 and 50 characters"
-    ),
+    )
+    .custom((value) => {
+
+      // Block HTML tags / script tags
+      const htmlTagPattern = /<[^>]*>/;
+
+      if (htmlTagPattern.test(value)) {
+        throw new Error(
+          "Animal name must not contain HTML or script tags"
+        );
+      }
+
+      return true;
+    }),
 
 
   // Breed

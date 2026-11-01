@@ -3,10 +3,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/User");
-
-const createAuditLog = require(
-  "../services/auditLogService"
-);
+const createAuditLog = require("../services/auditLogService");
 
 const {
   body,
@@ -15,24 +12,22 @@ const {
 
 const {
   validateLogin
-} = require(
-  "../validators/authValidator"
-);
+} = require("../validators/authValidator");
+
+const router = express.Router();
 
 
-// ========================================
+// ======================================================
 // REGISTRATION VALIDATION
-// ========================================
+// ======================================================
 
 const validateRegistration = [
 
-  // Validate name
+  // Name
   body("name")
     .trim()
     .notEmpty()
-    .withMessage(
-      "Name is required"
-    )
+    .withMessage("Name is required")
     .isLength({
       min: 2,
       max: 50
@@ -41,25 +36,23 @@ const validateRegistration = [
       "Name must be between 2 and 50 characters"
     ),
 
-  // Validate email
+
+  // Email
   body("email")
     .trim()
     .notEmpty()
-    .withMessage(
-      "Email is required"
-    )
+    .withMessage("Email is required")
     .isEmail()
     .withMessage(
       "Please enter a valid email address"
     )
     .normalizeEmail(),
 
-  // Strong password validation
+
+  // Password
   body("password")
     .notEmpty()
-    .withMessage(
-      "Password is required"
-    )
+    .withMessage("Password is required")
     .isLength({
       min: 8
     })
@@ -83,40 +76,31 @@ const validateRegistration = [
       "Password must contain at least one special character"
     ),
 
-  // Send validation errors
+
+  // Validation result
   (req, res, next) => {
 
-    const errors =
-      validationResult(req);
+    const errors = validationResult(req);
 
     if (!errors.isEmpty()) {
 
       return res.status(400).json({
-
-        message:
-          "Registration validation failed",
-
-        errors:
-          errors.array()
-
+        message: "Registration validation failed",
+        errors: errors.array()
       });
 
     }
 
     next();
-
   }
 
 ];
 
 
-const router = express.Router();
-
-
-// ========================================
+// ======================================================
 // REGISTER
 // POST /api/auth/register
-// ========================================
+// ======================================================
 
 router.post(
   "/register",
@@ -133,92 +117,104 @@ router.post(
       } = req.body;
 
 
-      // Check if user already exists
+      // -----------------------------------------------
+      // Normalize email
+      // -----------------------------------------------
+
+      const normalizedEmail =
+        email.trim().toLowerCase();
+
+
+      // -----------------------------------------------
+      // Check existing user
+      // -----------------------------------------------
 
       const existingUser =
         await User.findOne({
-
-          email:
-            email.toLowerCase()
-
+          email: normalizedEmail
         });
 
 
       if (existingUser) {
 
         return res.status(409).json({
-
-          message:
-            "User already exists"
-
+          message: "User already exists"
         });
 
       }
 
 
-      // Allowed roles
+      // -----------------------------------------------
+      // Allowed public registration roles
+      // -----------------------------------------------
+      //
+      // IMPORTANT:
+      // Admin accounts cannot be created through
+      // public registration.
+      //
+      // Admin accounts should be created through
+      // the secure admin creation process.
+      // -----------------------------------------------
 
       const allowedRoles = [
-
         "farmer",
-        "veterinarian",
-        "admin"
-
+        "veterinarian"
       ];
 
-
-      // Farmer is the default role
 
       const selectedRole =
         role || "farmer";
 
 
-      // Validate role
-
-      if (
-        !allowedRoles.includes(
-          selectedRole
-        )
-      ) {
+      if (!allowedRoles.includes(selectedRole)) {
 
         return res.status(400).json({
-
-          message:
-            "Invalid role"
-
+          message: "Invalid role"
         });
 
       }
 
 
+      // -----------------------------------------------
       // Hash password
+      // -----------------------------------------------
 
       const passwordHash =
         await bcrypt.hash(
-
           password,
-
           12
-
         );
 
 
+      // -----------------------------------------------
       // Create user
+      // -----------------------------------------------
 
       const user =
         await User.create({
 
-          name,
+          name: name.trim(),
 
-          email:
-            email.toLowerCase(),
+          email: normalizedEmail,
 
           passwordHash,
 
-          role:
-            selectedRole
+          role: selectedRole,
+
+          loginAttempts: 0,
+
+          lockUntil: null
 
         });
+
+
+      // -----------------------------------------------
+      // Registration success
+      // -----------------------------------------------
+
+      console.log(
+        `User registered successfully: ${user.email}`
+      );
 
 
       return res.status(201).json({
@@ -231,8 +227,10 @@ router.post(
 
       });
 
+    }
 
-    } catch (error) {
+
+    catch (error) {
 
       console.error(
         "Registration error:",
@@ -246,7 +244,7 @@ router.post(
           "Registration failed",
 
         error:
-          error.message
+          "An internal server error occurred"
 
       });
 
@@ -256,10 +254,10 @@ router.post(
 );
 
 
-// ========================================
+// ======================================================
 // LOGIN
 // POST /api/auth/login
-// ========================================
+// ======================================================
 
 router.post(
   "/login",
@@ -274,36 +272,51 @@ router.post(
       } = req.body;
 
 
+      // -----------------------------------------------
+      // Normalize email
+      // -----------------------------------------------
+
+      const normalizedEmail =
+        email.trim().toLowerCase();
+
+
+      console.log(
+        "Login attempt for:",
+        normalizedEmail
+      );
+
+
+      // -----------------------------------------------
       // Find user
+      // -----------------------------------------------
 
       const user =
         await User.findOne({
-
-          email:
-            email.toLowerCase()
-
+          email: normalizedEmail
         });
 
 
-      // ====================================
-      // USER DOES NOT EXIST
-      // ====================================
+      // -----------------------------------------------
+      // User does not exist
+      // -----------------------------------------------
 
       if (!user) {
 
+        console.log(
+          "Login failed: user not found"
+        );
+
+
         await createAuditLog({
 
-          userId:
-            null,
+          userId: null,
 
-          action:
-            "FAILED_LOGIN",
+          action: "FAILED_LOGIN",
 
-          module:
-            "AUTH",
+          module: "AUTH",
 
           description:
-            `Failed login attempt for email: ${email}`,
+            "Failed login attempt",
 
           ipAddress:
             req.ip
@@ -321,15 +334,13 @@ router.post(
       }
 
 
-      // ====================================
-      // CHECK ACCOUNT LOCK
-      // This must be before password check
-      // ====================================
+      // -----------------------------------------------
+      // Check account lock
+      // -----------------------------------------------
 
       if (
         user.lockUntil &&
-        user.lockUntil.getTime() >
-          Date.now()
+        user.lockUntil.getTime() > Date.now()
       ) {
 
         const remainingMinutes =
@@ -339,9 +350,7 @@ router.post(
               user.lockUntil.getTime() -
               Date.now()
             ) /
-            (
-              1000 * 60
-            )
+            (1000 * 60)
 
           );
 
@@ -356,60 +365,51 @@ router.post(
       }
 
 
-      // ====================================
-      // CHECK PASSWORD
-      // ====================================
+      // -----------------------------------------------
+      // Check password
+      // -----------------------------------------------
 
       const isMatch =
         await bcrypt.compare(
-
           password,
-
           user.passwordHash
-
         );
 
 
-      // ====================================
-      // WRONG PASSWORD
-      // ====================================
+      console.log(
+        "Password match:",
+        isMatch
+      );
+
+
+      // -----------------------------------------------
+      // Incorrect password
+      // -----------------------------------------------
 
       if (!isMatch) {
 
-        // Increase failed login attempts
-
         user.loginAttempts =
-          (
-            user.loginAttempts || 0
-          ) + 1;
+          (user.loginAttempts || 0) + 1;
 
 
-        // Lock account after 5 attempts
-
+        // Lock after 5 failed attempts
         if (
           user.loginAttempts >= 5
         ) {
 
           user.lockUntil =
             new Date(
-
               Date.now() +
-              15 *
-              60 *
-              1000
-
+              15 * 60 * 1000
             );
 
         }
 
 
-        // Save attempts and lock time
-
         await user.save();
 
 
-        // Create failed-login audit log
-
+        // Audit log
         await createAuditLog({
 
           userId:
@@ -422,7 +422,7 @@ router.post(
             "AUTH",
 
           description:
-            `Incorrect password for ${email}. Failed attempt: ${user.loginAttempts}`,
+            "Incorrect password during login",
 
           ipAddress:
             req.ip
@@ -430,13 +430,10 @@ router.post(
         });
 
 
-        // Fifth wrong attempt:
-        // return account locked
-
+        // Account locked
         if (
           user.lockUntil &&
-          user.lockUntil.getTime() >
-            Date.now()
+          user.lockUntil.getTime() > Date.now()
         ) {
 
           return res.status(423).json({
@@ -449,27 +446,34 @@ router.post(
         }
 
 
-        // Attempts 1 to 4
-
+        // Normal failed attempt
         return res.status(401).json({
 
           message:
             "Invalid email or password",
 
           attemptsRemaining:
-            5 -
-            user.loginAttempts
+            Math.max(
+              0,
+              5 - user.loginAttempts
+            )
 
         });
 
       }
 
 
-      // ====================================
+      // =================================================
       // SUCCESSFUL LOGIN
-      // Reset security fields
-      // ====================================
+      // =================================================
 
+      console.log(
+        "Login successful:",
+        user.email
+      );
+
+
+      // Reset failed login attempts
       user.loginAttempts = 0;
 
       user.lockUntil = null;
@@ -477,7 +481,29 @@ router.post(
       await user.save();
 
 
-      // Generate JWT token
+      // -----------------------------------------------
+      // Generate JWT
+      // -----------------------------------------------
+
+      if (!process.env.JWT_SECRET) {
+
+        console.error(
+          "JWT_SECRET is missing from environment variables"
+        );
+
+
+        return res.status(500).json({
+
+          message:
+            "Login failed",
+
+          error:
+            "An internal server error occurred"
+
+        });
+
+      }
+
 
       const token =
         jwt.sign(
@@ -485,7 +511,7 @@ router.post(
           {
 
             userId:
-              user._id,
+              user._id.toString(),
 
             role:
               user.role
@@ -495,16 +521,15 @@ router.post(
           process.env.JWT_SECRET,
 
           {
-
-            expiresIn:
-              "7d"
-
+            expiresIn: "7d"
           }
 
         );
 
 
-      // Create successful-login audit log
+      // -----------------------------------------------
+      // Successful login audit
+      // -----------------------------------------------
 
       await createAuditLog({
 
@@ -518,7 +543,7 @@ router.post(
           "AUTH",
 
         description:
-          `User logged in successfully: ${user.email}`,
+          "User logged in successfully",
 
         ipAddress:
           req.ip
@@ -526,7 +551,9 @@ router.post(
       });
 
 
-      // Return successful login
+      // -----------------------------------------------
+      // Send response
+      // -----------------------------------------------
 
       return res.status(200).json({
 
@@ -553,8 +580,10 @@ router.post(
 
       });
 
+    }
 
-    } catch (error) {
+
+    catch (error) {
 
       console.error(
         "Login error:",
@@ -568,7 +597,7 @@ router.post(
           "Login failed",
 
         error:
-          error.message
+          "An internal server error occurred"
 
       });
 
@@ -577,5 +606,9 @@ router.post(
   }
 );
 
+
+// ======================================================
+// EXPORT ROUTER
+// ======================================================
 
 module.exports = router;

@@ -1,0 +1,1410 @@
+/* =========================================================
+   DAIRYCARE AI
+   ANIMAL MANAGEMENT - PROFESSIONAL UI
+========================================================= */
+
+
+/* =========================================================
+   ROOT PAGE
+========================================================= */
+
+.dashboard {
+  min-height: 100vh;
+  width: 100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5faf7 0%,
+      #eef6f1 45%,
+      #f8fbf9 100%
+    );
+
+  color: #183b2a;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.dashboard-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  width: 100%;
+  min-height: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 22px 40px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #dce9e1;
+
+  box-shadow:
+    0 4px 20px rgba(20, 70, 45, 0.06);
+
+  backdrop-filter: blur(14px);
+}
+
+
+/* =========================================================
+   HEADER BRAND
+========================================================= */
+
+.dashboard-header > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+
+  color: #123f2a;
+
+  font-size: 30px;
+  font-weight: 800;
+
+  letter-spacing: -0.8px;
+  line-height: 1.1;
+}
+
+.dashboard-header p {
+  margin: 0;
+
+  color: #728078;
+
+  font-size: 13px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   HEADER BUTTONS
+========================================================= */
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  flex-wrap: wrap;
+}
+
+.header-buttons button {
+  min-height: 46px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 0 17px;
+
+  border-radius: 11px;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   BACK / DASHBOARD BUTTON
+========================================================= */
+
+.back-button {
+  color: #20583a;
+
+  background: #ffffff;
+
+  border: 1px solid #d5e4db;
+
+  box-shadow:
+    0 2px 6px rgba(20, 60, 40, 0.04);
+}
+
+.back-button:hover {
+  color: #12472d;
+
+  background: #f2f8f4;
+
+  border-color: #bcd6c7;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 18px rgba(25, 80, 50, 0.09);
+}
+
+
+/* =========================================================
+   ADD ANIMAL BUTTON
+========================================================= */
+
+.animals-button {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #176b43,
+      #218653
+    );
+
+  border: 1px solid #176b43;
+
+  box-shadow:
+    0 6px 15px rgba(23, 107, 67, 0.18);
+}
+
+.animals-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #125b39,
+      #176b43
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(23, 107, 67, 0.25);
+}
+
+
+/* =========================================================
+   REFRESH BUTTON
+========================================================= */
+
+.refresh-button {
+  color: #285f42;
+
+  background: #ffffff;
+
+  border: 1px solid #d5e4db;
+}
+
+.refresh-button:hover {
+  color: #165a38;
+
+  background: #f1f8f4;
+
+  border-color: #bcd8c8;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 7px 17px rgba(28, 83, 54, 0.08);
+}
+
+
+/* =========================================================
+   LOGOUT BUTTON
+========================================================= */
+
+.logout-button {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #123f2a,
+      #18553a
+    );
+
+  border: 1px solid #123f2a;
+
+  box-shadow:
+    0 6px 15px rgba(18, 63, 42, 0.18);
+}
+
+.logout-button:hover {
+  background:
+    linear-gradient(
+      135deg,
+      #0e3222,
+      #123f2a
+    );
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(18, 63, 42, 0.25);
+}
+
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.header-buttons button:active {
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.dashboard main {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+
+  padding: 48px 40px 80px;
+}
+
+
+/* =========================================================
+   PAGE TITLE
+========================================================= */
+
+.page-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  margin-bottom: 30px;
+}
+
+.section-title {
+  margin: 0 0 8px;
+
+  color: #12472f;
+
+  font-size: 31px;
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+  line-height: 1.2;
+}
+
+.animal-count {
+  margin: 0;
+
+  color: #6f8077;
+
+  font-size: 14px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.page-error {
+  margin-bottom: 25px;
+
+  padding: 15px 18px;
+
+  color: #9d342e;
+
+  background: #fff6f5;
+
+  border: 1px solid #f0d1ce;
+  border-left: 4px solid #d9534f;
+
+  border-radius: 10px;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  box-shadow:
+    0 4px 12px rgba(160, 50, 40, 0.05);
+}
+
+
+/* =========================================================
+   ANIMALS GRID
+========================================================= */
+
+.animals-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =========================================================
+   ANIMAL CARD
+========================================================= */
+
+.animal-card {
+  position: relative;
+  overflow: hidden;
+
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fbfdfc 100%
+    );
+
+  border: 1px solid #d9e7df;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 20px rgba(27, 72, 48, 0.055);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+/* =========================================================
+   TOP GREEN LINE
+========================================================= */
+
+.animal-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #176b43,
+      #45a66e
+    );
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLE
+========================================================= */
+
+.animal-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 130px;
+  height: 130px;
+
+  right: -65px;
+  bottom: -65px;
+
+  background: #edf6f1;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   CARD HOVER
+========================================================= */
+
+.animal-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #bfd8c9;
+
+  box-shadow:
+    0 14px 35px rgba(24, 78, 49, 0.11);
+}
+
+
+/* =========================================================
+   ANIMAL NAME
+========================================================= */
+
+.animal-card h3 {
+  position: relative;
+  z-index: 2;
+
+  margin: 5px 0 23px;
+
+  color: #17613d;
+
+  font-size: 20px;
+  font-weight: 800;
+
+  letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   ANIMAL INFORMATION
+========================================================= */
+
+.animal-card p {
+  position: relative;
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns: 145px 1fr;
+
+  gap: 10px;
+
+  margin: 0;
+
+  padding: 8px 0;
+
+  color: #728179;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+
+  border-bottom: 1px solid #edf2ef;
+}
+
+.animal-card p:last-of-type {
+  border-bottom: none;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.animal-card p strong {
+  color: #294d3b;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   ACTION AREA
+========================================================= */
+
+.animal-card > div[style] {
+  position: relative;
+  z-index: 5;
+
+  display: flex !important;
+  align-items: center;
+
+  gap: 10px !important;
+
+  margin-top: 20px !important;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #e4ece7;
+}
+
+
+/* =========================================================
+   ALL ACTION BUTTONS
+========================================================= */
+
+.edit-button,
+.delete-button,
+.ai-button,
+.ai-health-button {
+  min-height: 44px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 15px;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 750;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+/* =========================================================
+   EDIT BUTTON
+========================================================= */
+
+.edit-button {
+  color: #176b43;
+
+  background: #eff8f3;
+
+  border: 1px solid #cce4d5;
+}
+
+.edit-button:hover {
+  color: #ffffff;
+
+  background: #176b43;
+
+  border-color: #176b43;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(23, 107, 67, 0.18);
+}
+
+
+/* =========================================================
+   DELETE BUTTON
+========================================================= */
+
+.delete-button {
+  color: #c0443b;
+
+  background: #fff6f5;
+
+  border: 1px solid #efd0cc;
+}
+
+.delete-button:hover {
+  color: #ffffff;
+
+  background: #c94a40;
+
+  border-color: #c94a40;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(201, 74, 64, 0.18);
+}
+
+
+/* =========================================================
+   AI HEALTH ANALYSIS BUTTON
+========================================================= */
+
+.ai-button,
+.ai-health-button {
+  flex: 1;
+
+  min-width: 175px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #176b43 0%,
+      #238755 100%
+    );
+
+  border: 1px solid #176b43;
+
+  box-shadow:
+    0 5px 14px rgba(23, 107, 67, 0.18);
+}
+
+
+/* =========================================================
+   AI BUTTON HOVER
+========================================================= */
+
+.ai-button:hover,
+.ai-health-button:hover {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #125b39 0%,
+      #176b43 100%
+    );
+
+  border-color: #125b39;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(23, 107, 67, 0.26);
+}
+
+
+/* =========================================================
+   AI BUTTON ACTIVE
+========================================================= */
+
+.ai-button:active,
+.ai-health-button:active {
+  transform: translateY(0);
+
+  box-shadow:
+    0 4px 10px rgba(23, 107, 67, 0.18);
+}
+
+
+/* =========================================================
+   AI BUTTON FOCUS
+========================================================= */
+
+.ai-button:focus-visible,
+.ai-health-button:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 3px rgba(35, 135, 85, 0.20),
+    0 7px 18px rgba(23, 107, 67, 0.22);
+}
+
+
+/* =========================================================
+   DISABLED BUTTON
+========================================================= */
+
+.edit-button:disabled,
+.delete-button:disabled,
+.ai-button:disabled,
+.ai-health-button:disabled,
+.header-buttons button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.empty-message {
+  min-height: 300px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 45px 25px;
+
+  text-align: center;
+
+  background:
+    rgba(255, 255, 255, 0.8);
+
+  border: 1px dashed #cbded3;
+
+  border-radius: 18px;
+}
+
+
+/* =========================================================
+   EMPTY TITLE
+========================================================= */
+
+.empty-message h3 {
+  margin: 0 0 8px;
+
+  color: #24563c;
+
+  font-size: 20px;
+}
+
+
+/* =========================================================
+   EMPTY TEXT
+========================================================= */
+
+.empty-message p {
+  margin: 0 0 20px;
+
+  color: #75847c;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   ADD FIRST ANIMAL BUTTON
+========================================================= */
+
+.submit-button {
+  min-height: 46px;
+
+  padding: 0 22px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #176b43,
+      #238755
+    );
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 6px 16px rgba(23, 107, 67, 0.18);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 9px 22px rgba(23, 107, 67, 0.25);
+}
+
+
+/* =========================================================
+   AI ANALYSIS SECTION
+========================================================= */
+
+.dashboard-section {
+  margin-bottom: 30px;
+
+  padding: 28px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce9e1;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 7px 25px rgba(27, 72, 48, 0.06);
+}
+
+
+/* =========================================================
+   SECTION HEADER
+========================================================= */
+
+.section-header-row {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 22px;
+}
+
+.section-header-row p {
+  margin: 0;
+
+  color: #718078;
+
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   NAV BUTTON / CLOSE BUTTON
+========================================================= */
+
+.nav-button {
+  min-height: 42px;
+
+  padding: 0 16px;
+
+  color: #24563c;
+
+  background: #f3f8f5;
+
+  border: 1px solid #d2e3d9;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.nav-button:hover {
+  background: #e6f2eb;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 6px 14px rgba(25, 80, 50, 0.08);
+}
+
+
+/* =========================================================
+   AI ANALYSIS CARD
+========================================================= */
+
+.ai-analysis-card {
+  padding: 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #f9fcfa,
+      #f1f8f4
+    );
+
+  border: 1px solid #d5e6dc;
+
+  border-radius: 15px;
+}
+
+
+/* =========================================================
+   AI HEADER
+========================================================= */
+
+.ai-analysis-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.ai-analysis-header h3 {
+  margin: 0 0 5px;
+
+  color: #185a39;
+
+  font-size: 19px;
+}
+
+.ai-analysis-header p {
+  margin: 0;
+
+  color: #728078;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   AI RISK BADGE
+========================================================= */
+
+.ai-risk-badge {
+  min-width: 85px;
+
+  padding: 8px 14px;
+
+  text-align: center;
+
+  border-radius: 20px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   HIGH RISK
+========================================================= */
+
+.ai-risk-high {
+  color: #a8322b;
+
+  background: #fff0ee;
+
+  border: 1px solid #efc8c4;
+}
+
+
+/* =========================================================
+   MEDIUM RISK
+========================================================= */
+
+.ai-risk-medium {
+  color: #946617;
+
+  background: #fff7e4;
+
+  border: 1px solid #ecdcae;
+}
+
+
+/* =========================================================
+   LOW RISK
+========================================================= */
+
+.ai-risk-low {
+  color: #217143;
+
+  background: #eaf7ef;
+
+  border: 1px solid #c9e3d1;
+}
+
+
+/* =========================================================
+   DEFAULT RISK
+========================================================= */
+
+.ai-risk-default {
+  color: #647169;
+
+  background: #eef2ef;
+
+  border: 1px solid #d9e2dc;
+}
+
+
+/* =========================================================
+   AI SCORE
+========================================================= */
+
+.ai-score-box {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 20px;
+
+  margin-bottom: 22px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #eaf6ef,
+      #f6fbf8
+    );
+
+  border: 1px solid #d2e7d9;
+
+  border-radius: 12px;
+}
+
+.ai-score-box span {
+  color: #527062;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.6px;
+}
+
+.ai-score-box strong {
+  color: #14603a;
+
+  font-size: 28px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   AI SECTIONS
+========================================================= */
+
+.ai-analysis-section {
+  margin-top: 18px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #dce9e1;
+}
+
+.ai-analysis-section h3 {
+  margin: 0 0 12px;
+
+  color: #315744;
+
+  font-size: 14px;
+
+  font-weight: 800;
+}
+
+.ai-analysis-section ul {
+  margin: 0;
+
+  padding-left: 20px;
+}
+
+.ai-analysis-section li {
+  margin-bottom: 7px;
+
+  color: #65766d;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+.ai-analysis-section p {
+  margin: 0;
+
+  color: #68786f;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   AI DATA SUMMARY
+========================================================= */
+
+.ai-data-summary {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce8e1;
+
+  border-radius: 12px;
+}
+
+.ai-data-summary h3 {
+  margin: 0 0 12px;
+
+  color: #315744;
+
+  font-size: 14px;
+}
+
+.ai-data-summary p {
+  margin: 7px 0;
+
+  color: #6c7b73;
+
+  font-size: 12px;
+}
+
+.ai-data-summary strong {
+  color: #176b43;
+}
+
+
+/* =========================================================
+   LOADING PAGE
+========================================================= */
+
+.dashboard-loading {
+  min-height: 100vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f3f9f5,
+      #e9f3ed
+    );
+}
+
+.dashboard-loading h2 {
+  padding: 25px 35px;
+
+  color: #185a39;
+
+  background: #ffffff;
+
+  border: 1px solid #dce9e1;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 10px 30px rgba(25, 75, 48, 0.08);
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .dashboard-header {
+    padding: 20px 25px;
+  }
+
+  .dashboard main {
+    padding: 40px 25px 65px;
+  }
+
+  .animals-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .dashboard-header {
+    position: relative;
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 20px;
+  }
+
+  .header-buttons {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .dashboard main {
+    padding: 35px 20px 55px;
+  }
+
+  .animals-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-title {
+    font-size: 27px;
+  }
+
+  .section-header-row {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .dashboard-header {
+    padding: 17px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 25px;
+  }
+
+  .header-buttons {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    width: 100%;
+
+    gap: 8px;
+  }
+
+  .header-buttons button {
+    width: 100%;
+
+    min-height: 44px;
+
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .dashboard main {
+    padding: 28px 14px 45px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .animal-count {
+    font-size: 13px;
+  }
+
+  .animal-card {
+    padding: 20px;
+  }
+
+  .animal-card h3 {
+    font-size: 18px;
+  }
+
+  .animal-card p {
+    grid-template-columns: 125px 1fr;
+
+    font-size: 12px;
+  }
+
+  .animal-card > div[style] {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .edit-button,
+  .delete-button,
+  .ai-button,
+  .ai-health-button {
+    width: 100%;
+  }
+
+  .ai-button,
+  .ai-health-button {
+    min-width: 0;
+  }
+
+  .dashboard-section {
+    padding: 20px;
+  }
+
+  .ai-analysis-header {
+    align-items: flex-start;
+
+    flex-direction: column;
+  }
+
+  .ai-analysis-card {
+    padding: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .header-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header h1 {
+    font-size: 22px;
+  }
+
+  .animal-card p {
+    display: block;
+
+    padding: 7px 0;
+  }
+
+  .animal-card p strong {
+    display: block;
+
+    margin-bottom: 2px;
+  }
+
+  .ai-score-box {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+button:focus-visible {
+  outline: 3px solid rgba(36, 134, 83, 0.25);
+
+  outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+
+    animation-iteration-count: 1 !important;
+
+    transition-duration: 0.01ms !important;
+  }
+}

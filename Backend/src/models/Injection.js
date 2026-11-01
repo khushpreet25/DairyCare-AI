@@ -29,9 +29,19 @@ const injectionSchema = new mongoose.Schema(
       trim: true
     },
 
+    dosage: {
+      type: String,
+      trim: true
+    },
+
     notes: {
       type: String,
       trim: true
+    },
+
+    completed: {
+      type: Boolean,
+      default: false
     }
   },
   {

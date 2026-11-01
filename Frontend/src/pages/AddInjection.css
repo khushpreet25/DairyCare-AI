@@ -1,0 +1,607 @@
+/* =========================================================
+   DAIRYCARE AI - ADD INJECTION PAGE
+   ISOLATED PAGE STYLING
+========================================================= */
+
+/* ---------- PAGE ---------- */
+
+.add-injection-page {
+  min-height: 100vh !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+
+  background: linear-gradient(
+    180deg,
+    #f7faf8 0%,
+    #eef5f1 100%
+  ) !important;
+
+  color: #18352a !important;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.add-injection-page .dashboard-header {
+  position: relative !important;
+
+  width: 100% !important;
+  min-height: 95px !important;
+
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+
+  box-sizing: border-box !important;
+
+  padding: 20px 45px !important;
+
+  background: #ffffff !important;
+
+  border-bottom: 1px solid #dce7e1 !important;
+
+  box-shadow: 0 4px 18px rgba(20, 60, 40, 0.06) !important;
+}
+
+
+/* ---------- BRAND ---------- */
+
+.add-injection-page .brand-section {
+  min-width: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.add-injection-page .brand-section h1 {
+  margin: 0 !important;
+
+  color: #17482f !important;
+
+  font-size: 26px !important;
+  font-weight: 800 !important;
+
+  line-height: 1.2 !important;
+}
+
+.add-injection-page .brand-section p {
+  margin: 6px 0 0 !important;
+
+  color: #718079 !important;
+
+  font-size: 12px !important;
+}
+
+
+/* ---------- HEADER BUTTONS ---------- */
+
+.add-injection-page .header-buttons {
+  display: flex !important;
+  align-items: center !important;
+
+  gap: 10px !important;
+}
+
+.add-injection-page .back-button,
+.add-injection-page .logout-button {
+  width: auto !important;
+  min-width: 0 !important;
+
+  min-height: 40px !important;
+
+  padding: 9px 16px !important;
+
+  border-radius: 8px !important;
+
+  font-family: inherit !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+
+  cursor: pointer !important;
+
+  box-sizing: border-box !important;
+}
+
+.add-injection-page .back-button {
+  color: #24543f !important;
+
+  background: #f0f7f3 !important;
+
+  border: 1px solid #cddfd5 !important;
+}
+
+.add-injection-page .back-button:hover {
+  background: #e5f1eb !important;
+}
+
+.add-injection-page .logout-button {
+  color: #ffffff !important;
+
+  background: #185637 !important;
+
+  border: 1px solid #185637 !important;
+}
+
+.add-injection-page .logout-button:hover {
+  background: #12452d !important;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.add-injection-page .add-injection-main {
+  width: 100% !important;
+  max-width: 1050px !important;
+
+  margin: 0 auto !important;
+
+  padding: 45px 30px 70px !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   PAGE HEADING
+========================================================= */
+
+.add-injection-page .page-heading {
+  margin-bottom: 28px !important;
+}
+
+.add-injection-page .page-heading .section-title {
+  margin: 0 0 8px !important;
+
+  color: #153f2a !important;
+
+  font-size: 31px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: -0.5px !important;
+}
+
+.add-injection-page .section-description {
+  margin: 0 !important;
+
+  color: #718079 !important;
+
+  font-size: 15px !important;
+}
+
+
+/* =========================================================
+   MESSAGES
+========================================================= */
+
+.add-injection-page .success-message {
+  width: 100% !important;
+
+  box-sizing: border-box !important;
+
+  margin-bottom: 20px !important;
+  padding: 14px 17px !important;
+
+  color: #216b43 !important;
+
+  background: #eaf7ee !important;
+
+  border: 1px solid #c9e6d2 !important;
+
+  border-radius: 9px !important;
+
+  font-size: 14px !important;
+}
+
+.add-injection-page .page-error {
+  width: 100% !important;
+
+  display: block !important;
+
+  box-sizing: border-box !important;
+
+  margin-bottom: 20px !important;
+  padding: 14px 17px !important;
+
+  color: #9f3831 !important;
+
+  background: #fff2f0 !important;
+
+  border: 1px solid #edcbc7 !important;
+
+  border-left: 4px solid #c9574d !important;
+
+  border-radius: 9px !important;
+
+  font-size: 14px !important;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.add-injection-page .injection-form {
+  width: 100% !important;
+
+  display: grid !important;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr) !important;
+
+  column-gap: 28px !important;
+  row-gap: 22px !important;
+
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+  padding: 35px !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #dce7e1 !important;
+
+  border-radius: 18px !important;
+
+  box-shadow:
+    0 10px 35px rgba(25, 65, 45, 0.08) !important;
+}
+
+
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
+.add-injection-page .injection-form .form-group {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.add-injection-page .injection-form label {
+  display: block !important;
+
+  width: 100% !important;
+
+  margin: 0 0 8px !important;
+
+  color: #29483c !important;
+
+  font-size: 14px !important;
+  font-weight: 700 !important;
+
+  line-height: 1.4 !important;
+}
+
+.add-injection-page .injection-form label span {
+  color: #c2473e !important;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.add-injection-page .injection-form input,
+.add-injection-page .injection-form select,
+.add-injection-page .injection-form textarea {
+  display: block !important;
+
+  width: 100% !important;
+
+  max-width: 100% !important;
+
+  box-sizing: border-box !important;
+
+  margin: 0 !important;
+
+  padding: 13px 14px !important;
+
+  color: #203c31 !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #cbdad3 !important;
+
+  border-radius: 9px !important;
+
+  outline: none !important;
+
+  font-family: inherit !important;
+
+  font-size: 15px !important;
+
+  line-height: 1.4 !important;
+
+  box-shadow: none !important;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+
+/* INPUT HEIGHT */
+
+.add-injection-page .injection-form input,
+.add-injection-page .injection-form select {
+  height: 50px !important;
+}
+
+
+/* TEXTAREA */
+
+.add-injection-page .injection-form textarea {
+  min-height: 135px !important;
+
+  height: auto !important;
+
+  resize: vertical !important;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.add-injection-page .injection-form input:focus,
+.add-injection-page .injection-form select:focus,
+.add-injection-page .injection-form textarea:focus {
+  border-color: #318064 !important;
+
+  box-shadow:
+    0 0 0 3px rgba(49, 128, 100, 0.12) !important;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.add-injection-page .injection-form input::placeholder,
+.add-injection-page .injection-form textarea::placeholder {
+  color: #8a9791 !important;
+
+  opacity: 1 !important;
+}
+
+
+/* =========================================================
+   DATE INPUT
+========================================================= */
+
+.add-injection-page .injection-form input[type="date"] {
+  width: 100% !important;
+
+  min-width: 0 !important;
+
+  cursor: pointer !important;
+}
+
+
+/* =========================================================
+   NOTES - FULL WIDTH
+========================================================= */
+
+.add-injection-page .injection-form .notes-group {
+  grid-column: 1 / -1 !important;
+
+  width: 100% !important;
+}
+
+
+/* =========================================================
+   BUTTON AREA
+========================================================= */
+
+.add-injection-page .injection-form .form-actions {
+  grid-column: 1 / -1 !important;
+
+  width: 100% !important;
+
+  display: flex !important;
+
+  align-items: center !important;
+  justify-content: flex-end !important;
+
+  gap: 12px !important;
+
+  box-sizing: border-box !important;
+
+  margin: 5px 0 0 !important;
+  padding: 22px 0 0 !important;
+
+  border-top: 1px solid #e3ebe6 !important;
+}
+
+
+/* =========================================================
+   FORM BUTTONS
+========================================================= */
+
+.add-injection-page .injection-form .form-actions button {
+  width: auto !important;
+
+  min-width: 135px !important;
+
+  min-height: 45px !important;
+
+  padding: 11px 20px !important;
+
+  box-sizing: border-box !important;
+
+  border-radius: 9px !important;
+
+  font-family: inherit !important;
+
+  font-size: 14px !important;
+
+  font-weight: 700 !important;
+
+  cursor: pointer !important;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease !important;
+}
+
+
+/* ---------- CANCEL ---------- */
+
+.add-injection-page .cancel-button {
+  color: #246047 !important;
+
+  background: #ffffff !important;
+
+  border: 1px solid #bfd3c8 !important;
+}
+
+.add-injection-page .cancel-button:hover {
+  background: #f1f7f4 !important;
+
+  transform: translateY(-1px) !important;
+}
+
+
+/* ---------- SAVE ---------- */
+
+.add-injection-page .submit-button {
+  color: #ffffff !important;
+
+  background: #176b54 !important;
+
+  border: 1px solid #176b54 !important;
+
+  box-shadow:
+    0 4px 12px rgba(23, 107, 84, 0.15) !important;
+}
+
+.add-injection-page .submit-button:hover {
+  background: #125541 !important;
+
+  transform: translateY(-1px) !important;
+
+  box-shadow:
+    0 7px 17px rgba(23, 107, 84, 0.2) !important;
+}
+
+
+/* =========================================================
+   DISABLED
+========================================================= */
+
+.add-injection-page .injection-form input:disabled,
+.add-injection-page .injection-form select:disabled,
+.add-injection-page .injection-form textarea:disabled {
+  background: #f5f7f6 !important;
+
+  color: #7a8580 !important;
+
+  cursor: not-allowed !important;
+}
+
+.add-injection-page .injection-form button:disabled {
+  opacity: 0.6 !important;
+
+  cursor: not-allowed !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .add-injection-page .dashboard-header {
+    padding: 20px 25px !important;
+  }
+
+  .add-injection-page .add-injection-main {
+    padding: 35px 20px 50px !important;
+  }
+
+  .add-injection-page .injection-form {
+    grid-template-columns: 1fr !important;
+
+    padding: 28px !important;
+  }
+
+  .add-injection-page .injection-form .notes-group {
+    grid-column: auto !important;
+  }
+
+  .add-injection-page .injection-form .form-actions {
+    grid-column: auto !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .add-injection-page .dashboard-header {
+    flex-direction: column !important;
+
+    align-items: flex-start !important;
+
+    gap: 15px !important;
+
+    padding: 18px !important;
+  }
+
+  .add-injection-page .header-buttons {
+    width: 100% !important;
+  }
+
+  .add-injection-page .header-buttons button {
+    flex: 1 !important;
+  }
+
+  .add-injection-page .add-injection-main {
+    padding: 25px 14px 40px !important;
+  }
+
+  .add-injection-page .page-heading .section-title {
+    font-size: 26px !important;
+  }
+
+  .add-injection-page .injection-form {
+    padding: 20px !important;
+
+    border-radius: 14px !important;
+  }
+
+  .add-injection-page .injection-form .form-actions {
+    flex-direction: column !important;
+
+    align-items: stretch !important;
+  }
+
+  .add-injection-page .injection-form .form-actions button {
+    width: 100% !important;
+  }
+}
+.add-injection-page {
+  background: red !important;
+  min-height: 100vh !important;
+}

@@ -1,0 +1,1449 @@
+/* =========================================================
+   DAIRYCARE AI - ANALYTICS
+   Matching Dashboard Color System
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.analytics-page {
+    min-height: 100vh;
+    padding: 34px 7%;
+    background: #F4F8F6;
+    color: #0F5132;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.analytics-header {
+    background: #FFFFFF;
+    border: 1px solid #D7E7DF;
+    border-radius: 18px;
+    padding: 26px 30px;
+    margin-bottom: 26px;
+    box-shadow: 0 8px 24px rgba(15, 81, 50, 0.06);
+}
+
+.analytics-header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.analytics-title-row {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.analytics-title-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #EAF4EF;
+    border: 1px solid #D7E7DF;
+
+    font-size: 26px;
+}
+
+.analytics-header h1 {
+    margin: 0 0 5px;
+
+    font-size: 28px;
+    font-weight: 800;
+
+    color: #0F5132;
+}
+
+.analytics-header p {
+    margin: 0;
+
+    font-size: 14px;
+    color: #667B72;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.analytics-primary-button {
+    border: none;
+    border-radius: 12px;
+
+    background: #16794F;
+    color: #FFFFFF;
+
+    padding: 13px 21px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow: 0 7px 18px rgba(22, 121, 79, 0.20);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.analytics-primary-button:hover {
+    background: #0F6541;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 22px rgba(22, 121, 79, 0.26);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.analytics-section {
+    margin-bottom: 30px;
+}
+
+.analytics-section-heading {
+    margin-bottom: 17px;
+}
+
+.section-kicker {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #6B8177;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+.analytics-section-heading h2 {
+    margin: 0 0 5px;
+
+    font-size: 21px;
+    font-weight: 800;
+
+    color: #0F5132;
+}
+
+.analytics-section-heading p {
+    margin: 0;
+
+    font-size: 13px;
+
+    color: #70827A;
+}
+
+
+/* =========================================================
+   KPI CARDS
+========================================================= */
+
+.analytics-kpi-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 19px;
+}
+
+.analytics-kpi-card {
+    position: relative;
+
+    min-height: 145px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 17px;
+
+    padding: 22px;
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+
+    border: 1px solid #D7E7DF;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 81, 50, 0.055);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.analytics-kpi-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    right: -42px;
+    bottom: -42px;
+
+    border-radius: 50%;
+
+    background: #EDF6F1;
+}
+
+.analytics-kpi-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 13px 30px rgba(15, 81, 50, 0.09);
+}
+
+.analytics-kpi-icon {
+    position: relative;
+    z-index: 1;
+
+    flex-shrink: 0;
+
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 15px;
+
+    background: #EAF4EF;
+
+    border: 1px solid #D7E7DF;
+
+    font-size: 25px;
+}
+
+.analytics-kpi-content {
+    position: relative;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.analytics-kpi-content span {
+    margin-bottom: 5px;
+
+    color: #72837B;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+}
+
+.analytics-kpi-content strong {
+    margin-bottom: 5px;
+
+    color: #0F5132;
+
+    font-size: 27px;
+    line-height: 1;
+
+    font-weight: 800;
+}
+
+.analytics-kpi-content small {
+    color: #72837B;
+
+    font-size: 11px;
+}
+
+.analytics-warning-card {
+    border-color: #E7E0D0;
+}
+
+.warning-icon {
+    background: #FFF7E8;
+    border-color: #F0E0B8;
+}
+
+
+/* =========================================================
+   GENERAL CARD
+========================================================= */
+
+.analytics-card {
+    background: #FFFFFF;
+
+    border: 1px solid #D7E7DF;
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 8px 24px rgba(15, 81, 50, 0.055);
+}
+
+.analytics-card-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 12px;
+}
+
+.analytics-card-header h3 {
+    margin: 0 0 4px;
+
+    color: #0F5132;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.analytics-card-header span {
+    color: #71827A;
+
+    font-size: 12px;
+}
+
+.chart-badge {
+    padding: 7px 11px;
+
+    border-radius: 20px;
+
+    background: #EAF4EF;
+
+    color: #16794F;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FARM MANAGEMENT
+========================================================= */
+
+.farm-analytics-layout {
+    display: grid;
+
+    grid-template-columns: minmax(0, 2fr) minmax(280px, 0.9fr);
+
+    gap: 20px;
+}
+
+.farm-chart-card {
+    padding: 23px 24px;
+}
+
+.farm-chart-wrapper {
+    width: 100%;
+    height: 330px;
+}
+
+.farm-snapshot-card {
+    padding: 23px;
+}
+
+.snapshot-list {
+    display: flex;
+    flex-direction: column;
+
+    margin-top: 8px;
+}
+
+.snapshot-item {
+    display: flex;
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #E8F0EC;
+}
+
+.snapshot-item:last-child {
+    border-bottom: none;
+}
+
+.snapshot-item > span {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: #EAF4EF;
+
+    border: 1px solid #D7E7DF;
+
+    font-size: 19px;
+}
+
+.snapshot-item div {
+    display: flex;
+    flex-direction: column;
+}
+
+.snapshot-item small {
+    margin-bottom: 3px;
+
+    color: #72837B;
+
+    font-size: 11px;
+}
+
+.snapshot-item strong {
+    color: #0F5132;
+
+    font-size: 19px;
+}
+
+
+/* =========================================================
+   HEALTH ANALYTICS
+========================================================= */
+
+.health-analytics-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 1fr);
+
+    gap: 20px;
+}
+
+.health-donut-card,
+.health-status-card {
+    padding: 23px;
+}
+
+.health-donut-wrapper {
+    position: relative;
+
+    height: 280px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    pointer-events: none;
+}
+
+.donut-center strong {
+    color: #0F5132;
+
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.donut-center span {
+    margin-top: 3px;
+
+    color: #72837B;
+
+    font-size: 11px;
+}
+
+.health-legend {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 9px;
+
+    padding-top: 7px;
+}
+
+.health-legend > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: #F6FAF8;
+}
+
+.health-legend span:not(.legend-dot) {
+    color: #657970;
+
+    font-size: 10px;
+}
+
+.health-legend strong {
+    margin-left: auto;
+
+    color: #0F5132;
+
+    font-size: 13px;
+}
+
+.legend-dot {
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+.healthy-dot {
+    background: #2E9B62;
+}
+
+.attention-dot {
+    background: #E6A23C;
+}
+
+.critical-dot {
+    background: #D9534F;
+}
+
+.empty-chart {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+
+    color: #71827A;
+}
+
+.empty-chart span {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.empty-chart p {
+    margin: 0;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   HEALTH STATUS LIST
+========================================================= */
+
+.health-status-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-top: 10px;
+}
+
+.health-status-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    background: #F8FBF9;
+
+    border: 1px solid #E5EFEA;
+}
+
+.status-icon {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 11px;
+
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.healthy-status .status-icon {
+    background: #E7F5EC;
+    color: #2E9B62;
+}
+
+.attention-status .status-icon {
+    background: #FFF5E2;
+    color: #C88B23;
+}
+
+.critical-status .status-icon {
+    background: #FDECEC;
+    color: #D9534F;
+}
+
+.pregnant-status .status-icon {
+    background: #EAF4EF;
+    color: #16794F;
+}
+
+.status-details {
+    flex: 1;
+}
+
+.status-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 7px;
+}
+
+.status-title span {
+    color: #435F52;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.status-title strong {
+    color: #0F5132;
+
+    font-size: 14px;
+}
+
+.status-progress {
+    width: 100%;
+    height: 6px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #E7EFEB;
+}
+
+.status-progress div {
+    height: 100%;
+
+    border-radius: inherit;
+
+    transition: width 0.5s ease;
+}
+
+.healthy-status .status-progress div {
+    background: #2E9B62;
+}
+
+.attention-status .status-progress div {
+    background: #E6A23C;
+}
+
+.critical-status .status-progress div {
+    background: #D9534F;
+}
+
+.pregnant-status .status-progress div {
+    background: #16794F;
+}
+
+.status-details small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #819089;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   MILK PRODUCTION
+========================================================= */
+
+.milk-analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 19px;
+}
+
+.milk-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px;
+}
+
+.milk-icon {
+    width: 54px;
+    height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: #EAF4EF;
+
+    border: 1px solid #D7E7DF;
+
+    font-size: 24px;
+}
+
+.milk-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.milk-content span {
+    margin-bottom: 5px;
+
+    color: #71827A;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.milk-content strong {
+    color: #0F5132;
+
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.milk-content small {
+    margin-top: 4px;
+
+    color: #819089;
+
+    font-size: 11px;
+}
+
+.producer-name {
+    max-width: 180px;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   INJECTION MONITORING
+========================================================= */
+
+.injection-analytics-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 19px;
+
+    margin-bottom: 19px;
+}
+
+.injection-card {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 21px;
+}
+
+.injection-icon {
+    width: 51px;
+    height: 51px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background: #EAF4EF;
+
+    border: 1px solid #D7E7DF;
+
+    font-size: 22px;
+}
+
+.injection-card > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.injection-card span {
+    margin-bottom: 4px;
+
+    color: #71827A;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.injection-card strong {
+    color: #0F5132;
+
+    font-size: 24px;
+}
+
+.upcoming-injection {
+    border-color: #E8DFC8;
+}
+
+.upcoming-injection .injection-icon {
+    background: #FFF7E8;
+    border-color: #F0E0B8;
+}
+
+.overdue-injection {
+    border-color: #EED9D7;
+}
+
+.overdue-injection .injection-icon {
+    background: #FDECEC;
+    border-color: #F0D5D3;
+}
+
+.overdue-injection strong {
+    color: #C84C47;
+}
+
+
+/* =========================================================
+   PROGRESS CARD
+========================================================= */
+
+.progress-card {
+    padding: 22px 24px;
+}
+
+.progress-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 13px;
+}
+
+.progress-card-header h3 {
+    margin: 0 0 4px;
+
+    color: #0F5132;
+
+    font-size: 15px;
+}
+
+.progress-card-header span {
+    color: #71827A;
+
+    font-size: 11px;
+}
+
+.progress-card-header > strong {
+    color: #16794F;
+
+    font-size: 22px;
+}
+
+.main-progress {
+    width: 100%;
+    height: 9px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #E7EFEB;
+}
+
+.main-progress div {
+    height: 100%;
+
+    border-radius: inherit;
+
+    background: #16794F;
+
+    transition: width 0.5s ease;
+}
+
+
+/* =========================================================
+   REMINDER PERFORMANCE
+========================================================= */
+
+.reminder-performance-card {
+    display: grid;
+
+    grid-template-columns:
+        0.8fr
+        1.2fr;
+
+    align-items: center;
+
+    gap: 35px;
+
+    padding: 25px;
+}
+
+.reminder-summary {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.reminder-main-icon {
+    width: 57px;
+    height: 57px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #EAF4EF;
+
+    border: 1px solid #D7E7DF;
+
+    font-size: 25px;
+}
+
+.reminder-summary > div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.reminder-summary span {
+    color: #71827A;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.reminder-summary strong {
+    margin-top: 4px;
+
+    color: #0F5132;
+
+    font-size: 27px;
+}
+
+.reminder-summary small {
+    margin-top: 3px;
+
+    color: #819089;
+
+    font-size: 11px;
+}
+
+.reminder-progress-section {
+    padding-left: 20px;
+
+    border-left: 1px solid #E3ECE7;
+}
+
+.reminder-progress-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 9px;
+}
+
+.reminder-progress-header span {
+    color: #657970;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.reminder-progress-header strong {
+    color: #16794F;
+
+    font-size: 13px;
+}
+
+.reminder-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 8px;
+}
+
+.reminder-meta span {
+    color: #819089;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   INSIGHTS
+========================================================= */
+
+.insights-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 19px;
+}
+
+.insight-card {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 21px;
+}
+
+.insight-icon {
+    width: 47px;
+    height: 47px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    font-size: 21px;
+}
+
+.green-insight {
+    background: #EAF4EF;
+    border: 1px solid #D7E7DF;
+}
+
+.amber-insight {
+    background: #FFF7E8;
+    border: 1px solid #F0E0B8;
+}
+
+.insight-card h3 {
+    margin: 1px 0 5px;
+
+    color: #0F5132;
+
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.insight-card p {
+    margin: 0;
+
+    color: #71827A;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+.insight-card p strong {
+    color: #0F5132;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.analytics-footer {
+    display: flex;
+
+    justify-content: center;
+
+    padding: 8px 0 25px;
+}
+
+.back-dashboard-button {
+    padding: 11px 18px;
+
+    border-radius: 11px;
+
+    background: #EAF4EF;
+
+    border: 1px solid #D7E7DF;
+
+    color: #0F5132;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-dashboard-button:hover {
+    background: #DFEEE7;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.analytics-loading {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.loading-spinner {
+    width: 42px;
+    height: 42px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50%;
+
+    border: 4px solid #DDEBE4;
+    border-top-color: #16794F;
+
+    animation: analytics-spin 0.8s linear infinite;
+}
+
+.analytics-loading h2 {
+    margin: 0 0 6px;
+
+    color: #0F5132;
+
+    font-size: 20px;
+}
+
+.analytics-loading p {
+    margin: 0;
+
+    color: #71827A;
+
+    font-size: 13px;
+}
+
+@keyframes analytics-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.analytics-error {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.error-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    border-radius: 15px;
+
+    background: #FFF7E8;
+
+    font-size: 26px;
+}
+
+.analytics-error h2 {
+    margin: 0 0 7px;
+
+    color: #0F5132;
+
+    font-size: 20px;
+}
+
+.analytics-error p {
+    margin: 0 0 17px;
+
+    color: #71827A;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVE - 1200px
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .analytics-page {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .analytics-kpi-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .farm-analytics-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .health-analytics-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .reminder-performance-card {
+        grid-template-columns: 1fr;
+    }
+
+    .reminder-progress-section {
+        padding-left: 0;
+
+        padding-top: 20px;
+
+        border-left: none;
+        border-top: 1px solid #E3ECE7;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .analytics-page {
+        padding: 20px 16px;
+    }
+
+    .analytics-header {
+        padding: 20px;
+    }
+
+    .analytics-header-content {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .analytics-primary-button {
+        width: 100%;
+    }
+
+    .analytics-kpi-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .milk-analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .injection-analytics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .insights-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .health-legend {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .analytics-page {
+        padding: 15px 11px;
+    }
+
+    .analytics-header {
+        border-radius: 14px;
+
+        padding: 17px;
+    }
+
+    .analytics-title-icon {
+        width: 46px;
+        height: 46px;
+
+        font-size: 22px;
+    }
+
+    .analytics-header h1 {
+        font-size: 23px;
+    }
+
+    .analytics-kpi-card {
+        min-height: 125px;
+
+        padding: 17px;
+    }
+
+    .analytics-kpi-icon {
+        width: 50px;
+        height: 50px;
+
+        font-size: 22px;
+    }
+
+    .analytics-kpi-content strong {
+        font-size: 23px;
+    }
+
+    .farm-chart-card,
+    .farm-snapshot-card,
+    .health-donut-card,
+    .health-status-card,
+    .progress-card,
+    .reminder-performance-card {
+        padding: 18px;
+    }
+
+    .farm-chart-wrapper {
+        height: 270px;
+    }
+
+    .health-donut-wrapper {
+        height: 245px;
+    }
+
+    .analytics-section-heading h2 {
+        font-size: 19px;
+    }
+
+    .status-icon {
+        width: 34px;
+        height: 34px;
+    }
+
+    .milk-card,
+    .injection-card {
+        padding: 18px;
+    }
+
+}

@@ -1,0 +1,358 @@
+.ai-trend-page {
+  min-height: 100vh;
+  background: #f4f7f5;
+  padding: 30px;
+  color: #24352b;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.ai-trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.ai-trend-header h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #173d2b;
+}
+
+.ai-trend-header p {
+  margin-top: 8px;
+  color: #718078;
+}
+
+.back-btn,
+.ai-trend-error button {
+  border: none;
+  background: #1f6b45;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.back-btn:hover,
+.ai-trend-error button:hover {
+  background: #185737;
+}
+
+
+/* =========================
+   COMMON CARD
+========================= */
+
+.trend-card {
+  background: white;
+  border: 1px solid #dfe8e2;
+  border-radius: 14px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 14px rgba(30, 60, 45, 0.05);
+}
+
+.trend-card h2 {
+  margin-top: 0;
+  color: #173d2b;
+}
+
+
+/* =========================
+   ANIMAL SUMMARY
+========================= */
+
+.animal-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.animal-summary > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.summary-label {
+  font-size: 13px;
+  color: #7b8b82;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.animal-summary strong {
+  font-size: 20px;
+  color: #1f4d35;
+}
+
+
+/* =========================
+   SUMMARY GRID
+========================= */
+
+.trend-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.trend-summary-grid .trend-card {
+  margin-bottom: 0;
+  min-height: 100px;
+}
+
+.trend-value {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+.health-score {
+  display: block;
+  font-size: 30px;
+  color: #1f6b45;
+  margin-top: 12px;
+}
+
+
+/* =========================
+   RISK BADGES
+========================= */
+
+.risk-badge {
+  display: inline-block;
+  width: fit-content;
+  padding: 6px 13px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.risk-badge.low {
+  background: #e4f5ea;
+  color: #18713d;
+}
+
+.risk-badge.medium {
+  background: #fff2d8;
+  color: #9a6400;
+}
+
+.risk-badge.high {
+  background: #fde4e4;
+  color: #b42318;
+}
+
+
+/* =========================
+   RISK CHANGE
+========================= */
+
+.risk-change-card {
+  border-left: 5px solid #1f6b45;
+}
+
+.risk-change-card p {
+  color: #5f7067;
+  margin-bottom: 0;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.section-title h2 {
+  margin-bottom: 5px;
+}
+
+.section-title p {
+  margin: 0;
+  color: #7a8880;
+}
+
+
+/* =========================
+   HISTORY TABLE
+========================= */
+
+.history-table-wrapper {
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.history-table th {
+  background: #f0f5f2;
+  color: #315441;
+  text-align: left;
+  padding: 13px;
+  font-size: 13px;
+}
+
+.history-table td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #e8eeea;
+  font-size: 14px;
+}
+
+.history-table tbody tr:hover {
+  background: #f8fbf9;
+}
+
+.history-table .risk-badge {
+  margin-top: 0;
+}
+
+
+/* =========================
+   INSIGHTS
+========================= */
+
+.insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.insight-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f5f9f6;
+  border: 1px solid #e0ebe3;
+  border-radius: 10px;
+  padding: 13px 15px;
+}
+
+.insight-item span {
+  font-size: 18px;
+}
+
+.insight-item p {
+  margin: 0;
+  line-height: 1.5;
+  color: #52645a;
+}
+
+
+/* =========================
+   DISCLAIMER
+========================= */
+
+.ai-trend-disclaimer {
+  background: #eef5f0;
+  border: 1px solid #d4e4d8;
+  border-radius: 12px;
+  padding: 18px;
+  margin-top: 20px;
+}
+
+.ai-trend-disclaimer strong {
+  color: #27583d;
+}
+
+.ai-trend-disclaimer p {
+  margin-bottom: 0;
+  color: #617269;
+  line-height: 1.6;
+}
+
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.ai-trend-loading {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #527060;
+}
+
+.ai-trend-error {
+  max-width: 500px;
+  margin: 100px auto;
+  background: white;
+  border: 1px solid #e1e8e3;
+  border-radius: 14px;
+  padding: 30px;
+  text-align: center;
+}
+
+.ai-trend-error h2 {
+  color: #173d2b;
+}
+
+.ai-trend-error p {
+  color: #68786f;
+  margin-bottom: 20px;
+}
+
+.no-history {
+  text-align: center;
+  padding: 30px;
+  color: #7a8880;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .trend-summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .ai-trend-page {
+    padding: 20px;
+  }
+
+  .ai-trend-header {
+    flex-direction: column;
+  }
+
+  .animal-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .trend-summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-trend-header h1 {
+    font-size: 24px;
+  }
+
+}

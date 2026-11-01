@@ -1,0 +1,413 @@
+/* =========================================
+   DairyCare AI - Add Animal Page
+========================================= */
+
+.add-animal-page {
+  min-height: 100vh;
+  background: #f5f8f7;
+  color: #173f32;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.add-animal-page .dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 22px 5%;
+
+  background: #ffffff;
+  border-bottom: 1px solid #dce8e3;
+}
+
+.add-animal-page .dashboard-header h1 {
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  color: #075536;
+}
+
+.add-animal-page .dashboard-header p {
+  margin: 5px 0 0;
+
+  color: #718078;
+  font-size: 16px;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* =========================================
+   HEADER BUTTONS
+========================================= */
+
+.back-button,
+.logout-button {
+  border: none;
+  padding: 13px 20px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.back-button {
+  background: #ffffff;
+  color: #075536;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.back-button:hover {
+  background: #eef6f2;
+}
+
+.logout-button {
+  background: #075536;
+  color: #ffffff;
+}
+
+.logout-button:hover {
+  background: #06452c;
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.add-animal-main {
+  max-width: 1000px;
+
+  margin: 40px auto;
+
+  padding: 0 25px;
+}
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.section-title {
+  margin: 0 0 25px;
+
+  font-size: 27px;
+  font-weight: 700;
+
+  color: #075536;
+}
+
+/* =========================================
+   SUCCESS / ERROR MESSAGE
+========================================= */
+
+.success-message,
+.page-error {
+  margin-bottom: 20px;
+
+  padding: 14px 18px;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.success-message {
+  background: #e8f7ef;
+  color: #176b43;
+
+  border: 1px solid #bfe6d0;
+}
+
+.page-error {
+  background: #fdecec;
+  color: #a12b2b;
+
+  border: 1px solid #f2c4c4;
+}
+
+/* =========================================
+   FORM CARD
+========================================= */
+
+.animal-form {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 35px;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.07);
+
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 28px;
+  row-gap: 22px;
+}
+
+/* =========================================
+   LABELS
+========================================= */
+
+.animal-form label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 8px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #315047;
+}
+
+/* =========================================
+   INPUTS & SELECT
+========================================= */
+
+.animal-form input,
+.animal-form select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 13px 14px;
+
+  border: 1px solid #ccd9d4;
+
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #20352e;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Focus */
+
+.animal-form input:focus,
+.animal-form select:focus {
+  border-color: #16865c;
+
+  box-shadow:
+    0 0 0 3px rgba(22, 134, 92, 0.12);
+}
+
+/* Placeholder */
+
+.animal-form input::placeholder {
+  color: #a0aaa6;
+}
+
+/* =========================================
+   DATE INPUT
+========================================= */
+
+.animal-form input[type="date"] {
+  cursor: pointer;
+}
+
+/* =========================================
+   NUMBER INPUT
+========================================= */
+
+.animal-form input[type="number"] {
+  appearance: textfield;
+}
+
+.animal-form input[type="number"]::-webkit-inner-spin-button,
+.animal-form input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+/* =========================================
+   SELECT
+========================================= */
+
+.animal-form select {
+  cursor: pointer;
+}
+
+/* =========================================
+   PREGNANCY CHECKBOX
+========================================= */
+
+.animal-form .checkbox-label {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 4px;
+
+  font-size: 14px;
+
+  cursor: pointer;
+}
+
+.animal-form .checkbox-label input {
+  width: 18px;
+  height: 18px;
+
+  margin: 0;
+
+  cursor: pointer;
+
+  accent-color: #08784f;
+}
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
+.submit-button {
+  grid-column: 1 / -1;
+
+  justify-self: center;
+
+  min-width: 210px;
+
+  padding: 14px 28px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #08784f;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.submit-button:hover:not(:disabled) {
+  background: #066842;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 5px 15px rgba(8, 120, 79, 0.2);
+}
+
+.submit-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-button:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 800px) {
+
+  .add-animal-main {
+    margin: 30px auto;
+  }
+
+  .animal-form {
+    grid-template-columns: 1fr;
+
+    padding: 28px;
+  }
+
+  .submit-button {
+    grid-column: 1;
+
+    width: 100%;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .add-animal-page .dashboard-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 18px;
+
+    padding: 20px;
+  }
+
+  .add-animal-page .dashboard-header h1 {
+    font-size: 26px;
+  }
+
+  .header-buttons {
+    width: 100%;
+  }
+
+  .back-button,
+  .logout-button {
+    flex: 1;
+  }
+
+  .add-animal-main {
+    margin: 25px auto;
+
+    padding: 0 15px;
+  }
+
+  .section-title {
+    font-size: 23px;
+  }
+
+  .animal-form {
+    padding: 22px;
+
+    border-radius: 14px;
+
+    row-gap: 18px;
+  }
+
+  .submit-button {
+    min-width: 0;
+  }
+}
